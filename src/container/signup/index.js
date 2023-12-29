@@ -1,4 +1,5 @@
 import { Form, REG_EXP_EMAIL, REG_EXP_PASSWORD, } from '../../script/form'
+import { saveSession, } from '../../script/session'
 
 class SignupForm extends Form {
     FIELD_NAME = {
@@ -59,7 +60,7 @@ class SignupForm extends Form {
         } else {
             console.log(this.value)
 
-            this.seetAlert('progress', 'Завантаження...')
+            this.setAlert('progress', 'Завантаження...')
         }
 
         try {
@@ -72,13 +73,22 @@ class SignupForm extends Form {
             const data = await res.json()
 
             if(res.ok) {
-                this.seetAlert('success', data.message)
+                this.setAlert('success', data.message)
+                
+                saveSession(data.session)
+
+                if(user.isConfirm) {
+                    location.assign('/home')
+                }else {
+                    location.assign('/')
+                }
+
             } else {
-                this.seetAlert('error', data.message)
+                this.setAlert('error', data.message)
             }
             
         } catch (error) {
-            this.seetAlert('error', error.message)
+            this.setAlert('error', error.message)
         }
     }
 

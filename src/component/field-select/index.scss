@@ -2,7 +2,6 @@
 @use '../field/index.scss' as field;
 
 .field--select {
-
 	.field__select {
 		border: 1px solid s.color('box');
 		background: s.color('box');
@@ -21,10 +20,10 @@
 
 	.field__value {
 		font-size: 14px;
-		color: s.color('dark');
+		color: s.color(dark);
 
 		&--placeholder {
-			color: s.color('light');
+			color: s.color(light);
 		}
 	}
 
@@ -35,7 +34,7 @@
 
 	.field__container:hover {
 		.field__select {
-			border-color: s.color(grey);
+			border-color: s.color(gray);
 		}
 	}
 

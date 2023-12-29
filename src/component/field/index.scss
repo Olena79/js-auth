@@ -7,7 +7,7 @@
 
 	&__label {
 		font-size: 14px;
-		color: s.color(grey);
+		color: s.color(gray);
 	}
 
 	&__input {
@@ -28,11 +28,11 @@
 		transition: border-color 0.3s;
 
 		&:hover {
-			border-color: s.color(grey);
+			border-color: s.color(gray);
 		}
 
 		&:focus {
-			border-color: s.color('main');
+			border-color: s.color(main);
 		}
 	}
 }

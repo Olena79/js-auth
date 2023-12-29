@@ -32,7 +32,7 @@ class RecoveryForm extends Form {
         } else {
             console.log(this.value)
 
-            this.seetAlert('progress', 'Завантаження...')
+            this.setAlert('progress', 'Завантаження...')
         }
 
         try {
@@ -45,16 +45,16 @@ class RecoveryForm extends Form {
             const data = await res.json()
 
             if(res.ok) {
-                this.seetAlert('success', data.message)
+                this.setAlert('success', data.message)
 
                 location.assign('/recovery-confirm')
 
             } else {
-                this.seetAlert('error', data.message)
+                this.setAlert('error', data.message)
             }
             
         } catch (error) {
-            this.seetAlert('error', error.message)
+            this.setAlert('error', error.message)
         }
     }
 

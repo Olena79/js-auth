@@ -5,11 +5,35 @@ const router = express.Router()
 router.get('/', function(req, res) {
     res.render('index', {
         name: 'index',
-        components: [''],
-        title: "Auth",
+        components: [],
+        title: "Index page",
         data: {},
     })
 })
+
+//========================================
+
+router.get('/home', function(req, res) {
+    res.render('home', {
+        name: 'home',
+        components: [],
+        title: "Home page",
+        data: {},
+    })
+})
+
+//========================================
+
+router.get('/logout', function(req, res) {
+    res.render('logout', {
+        name: 'logout',
+        components: [],
+        title: "Logout page",
+        data: {},
+    })
+})
+
+//========================================
 
 // Підключіть файли роутів
 const auth = require('./auth')
